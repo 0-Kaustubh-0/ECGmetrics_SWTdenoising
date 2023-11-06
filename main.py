@@ -58,22 +58,22 @@ for j in range(0, sets - 1):
     # link here once published
 
     # Find R-peaks in the denoised ECG signal
-    rPeaks, _ = eca.find_r_peaks(denoised_ecg, height=0.2, fs)  # Adjust threshold as needed
+    rPeaks, _ = ecAna.find_r_peaks(denoised_ecg, height=0.2, fs)  # Adjust threshold as needed
 
     # Calculate the heart rate and RR intervals for the given denoised signal data from R-peaks
-    HR, RRintervals = eca.calculate_heart_rate(rPeaks, fs)
+    HR, RRintervals = ecAna.calculate_heart_rate(rPeaks, fs)
 
     # Analyze hear rhythm based on R-R intervals
-    HeartRhythmState = eca.analyze_rhythm(RRintervals, threshold=0.15)
+    HeartRhythmState = ecAna.analyze_rhythm(RRintervals, threshold=0.15)
 
     # Calculate ST-segments and anlayze changes
-    STsegmentState = eca.analyze_st_segment(denoised_ecg, rPeaks, fs)
+    STsegmentState = ecAna.analyze_st_segment(denoised_ecg, rPeaks, fs)
 
     # Analyze T-waves for abnormalities
-    TwaveState = eca.analyze_t_wave(denoised_ecg, threshold=0.1)
+    TwaveState = ecAna.analyze_t_wave(denoised_ecg, threshold=0.1)
 
     # Use P-peaks and QRS intervals to extract the the P-R intervals
-    PTintervalState = eca.analyze_pr_interval(RRintervals, fs, threshold=0.2)
+    PTintervalState = ecAna.analyze_pr_interval(RRintervals, fs, threshold=0.2)
 
     # Display all metrics
     print("Heart rate: ", HR)

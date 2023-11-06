@@ -17,7 +17,7 @@ This `Python` project:
 Use the following commands in `terminal` to clone this project into your local folder `ECG Project/~`
 
 ```bash
-git clone 
+git clone https://github.com/0-Kaustubh-0/ECGmetrics_SWTdenoising.git
 ```
 
 ### Dependencies
