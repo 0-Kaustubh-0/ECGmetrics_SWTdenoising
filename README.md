@@ -36,8 +36,6 @@ There are 3 primary functions included as a part of the project:
 * ecgAnalyze        - Function library to generate metrics from the ECG data supplied
 * main.py           - Main function which calls the two functions above
 
-Ensure you have ``
-
 > Tip: You may utilize any denoising technique that you deem fit as per your data/ analyses. You can find [filter creation guides][1] or several wavelet denoising techniques in my other repos.
 
 ## Reference
